@@ -1,0 +1,13 @@
+features:
+  - "user_profile_features:signup_country"
+  - "user_profile_features:kyc_status"
+  - "transaction_features:amount"
+  - "transaction_features:device_type"
+
+model_params:
+  objective: "binary:logistic"
+  eval_metric: "aucpr"
+  max_depth: 5
+  learning_rate: 0.1
+  n_estimators: 100
+  scale_pos_weight: 10  # Addresses class imbalance safely in XGBoost
